@@ -1,40 +1,43 @@
 package br.com.bb9leko.vo;
 
 public class Transacao {
-    public String classificacaoAtivo;
-    public String compraOUVenda;
-    public String corretora;
-    public String dataEvento;
+
     public int id;
-    public int quantidade;
+
+    public String dataEvento;
+
+    public String corretora;
+
+    public String classificacaoAtivo;
+
     public String ticket;
-    public double valorCorretagem;
-    public double valorTaxasEmolumentos;
-    public double valorTotal;
+
+    public String compraOUVenda;
+
+    public int quantidade;
+
     public double valorUnitario;
 
-    public String getClassificacaoAtivo() {
-        return classificacaoAtivo;
+    public double valorTotal;
+
+    public double valorTaxaLiquidacao;
+
+    public double valorTaxasEmolumentos;
+
+    public double valorImpostos;
+
+    public double outrosValoresCobrados;
+
+    public double valorCorretagem;
+
+    public double valorTotalComCustosEDespesas;
+
+    public int getId() {
+        return id;
     }
 
-    public void setClassificacaoAtivo(String classificacaoAtivo) {
-        this.classificacaoAtivo = classificacaoAtivo;
-    }
-
-    public String getCompraOUVenda() {
-        return compraOUVenda;
-    }
-
-    public void setCompraOUVenda(String compraOUVenda) {
-        this.compraOUVenda = compraOUVenda;
-    }
-
-    public String getCorretora() {
-        return corretora;
-    }
-
-    public void setCorretora(String corretora) {
-        this.corretora = corretora;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDataEvento() {
@@ -45,20 +48,20 @@ public class Transacao {
         this.dataEvento = dataEvento;
     }
 
-    public int getId() {
-        return id;
+    public String getCorretora() {
+        return corretora;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCorretora(String corretora) {
+        this.corretora = corretora;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public String getClassificacaoAtivo() {
+        return classificacaoAtivo;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setClassificacaoAtivo(String classificacaoAtivo) {
+        this.classificacaoAtivo = classificacaoAtivo;
     }
 
     public String getTicket() {
@@ -69,28 +72,20 @@ public class Transacao {
         this.ticket = ticket;
     }
 
-    public double getValorCorretagem() {
-        return valorCorretagem;
+    public String getCompraOUVenda() {
+        return compraOUVenda;
     }
 
-    public void setValorCorretagem(double valorCorretagem) {
-        this.valorCorretagem = valorCorretagem;
+    public void setCompraOUVenda(String compraOUVenda) {
+        this.compraOUVenda = compraOUVenda;
     }
 
-    public double getValorTaxasEmolumentos() {
-        return valorTaxasEmolumentos;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setValorTaxasEmolumentos(double valorTaxasEmolumentos) {
-        this.valorTaxasEmolumentos = valorTaxasEmolumentos;
-    }
-
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     public double getValorUnitario() {
@@ -101,20 +96,80 @@ public class Transacao {
         this.valorUnitario = valorUnitario;
     }
 
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public double getValorTaxaLiquidacao() {
+        return valorTaxaLiquidacao;
+    }
+
+    public void setValorTaxaLiquidacao(double valorTaxaLiquidacao) {
+        this.valorTaxaLiquidacao = valorTaxaLiquidacao;
+    }
+
+    public double getValorTaxasEmolumentos() {
+        return valorTaxasEmolumentos;
+    }
+
+    public void setValorTaxasEmolumentos(double valorTaxasEmolumentos) {
+        this.valorTaxasEmolumentos = valorTaxasEmolumentos;
+    }
+
+    public double getValorImpostos() {
+        return valorImpostos;
+    }
+
+    public void setValorImpostos(double valorImpostos) {
+        this.valorImpostos = valorImpostos;
+    }
+
+    public double getOutrosValoresCobrados() {
+        return outrosValoresCobrados;
+    }
+
+    public void setOutrosValoresCobrados(double outrosValoresCobrados) {
+        this.outrosValoresCobrados = outrosValoresCobrados;
+    }
+
+    public double getValorCorretagem() {
+        return valorCorretagem;
+    }
+
+    public void setValorCorretagem(double valorCorretagem) {
+        this.valorCorretagem = valorCorretagem;
+    }
+
+    public double getValorTotalComCustosEDespesas() {
+        return valorTotalComCustosEDespesas;
+    }
+
+    public void setValorTotalComCustosEDespesas(double valorTotalComCustosEDespesas) {
+        this.valorTotalComCustosEDespesas = valorTotalComCustosEDespesas;
+    }
+
     @Override
     public String toString() {
-        return "{" +
-                "classificacaoAtivo='" + classificacaoAtivo + '\'' +
-                ", compraOUVenda='" + compraOUVenda + '\'' +
-                ", corretora='" + corretora + '\'' +
+        return "Transacao{" +
+                "id=" + id +
                 ", dataEvento='" + dataEvento + '\'' +
-                ", id=" + id +
-                ", quantidade=" + quantidade +
+                ", corretora='" + corretora + '\'' +
+                ", classificacaoAtivo='" + classificacaoAtivo + '\'' +
                 ", ticket='" + ticket + '\'' +
-                ", valorCorretagem=" + valorCorretagem +
-                ", valorTaxasEmolumentos=" + valorTaxasEmolumentos +
-                ", valorTotal=" + valorTotal +
+                ", compraOUVenda='" + compraOUVenda + '\'' +
+                ", quantidade=" + quantidade +
                 ", valorUnitario=" + valorUnitario +
+                ", valorTotal=" + valorTotal +
+                ", valorTaxaLiquidacao=" + valorTaxaLiquidacao +
+                ", valorTaxasEmolumentos=" + valorTaxasEmolumentos +
+                ", valorImpostos=" + valorImpostos +
+                ", outrosValoresCobrados=" + outrosValoresCobrados +
+                ", valorCorretagem=" + valorCorretagem +
+                ", valorTotalComCustosEDespesas=" + valorTotalComCustosEDespesas +
                 '}';
     }
 }
