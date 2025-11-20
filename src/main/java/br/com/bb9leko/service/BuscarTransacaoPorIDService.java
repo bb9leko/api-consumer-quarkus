@@ -1,9 +1,10 @@
-/*package br.com.bb9leko.service;
+package br.com.bb9leko.service;
 
 import br.com.bb9leko.rest.client.InterfaceTransacao;
 import br.com.bb9leko.vo.Transacao;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
@@ -14,18 +15,12 @@ public class BuscarTransacaoPorIDService {
     @RestClient
     InterfaceTransacao interfaceTransacao;
 
-    public Response findById(Long id) {
+    public Transacao buscarTransacaoPorId(@PathParam("id") Long id) {
         try {
-            Response response = interfaceTransacao.buscarTransacaoPorId(id);
-            if (response.getStatus() == 200) {
-                return response;
-            } else {
-                return Response.status(response.getStatus()).build();
-            }
+            return interfaceTransacao.buscarTransacaoPorId(id);
         } catch (Exception e) {
             e.printStackTrace();
-            return Response.serverError().build();
+            return null;
         }
     }
 }
-*/

@@ -1,6 +1,7 @@
 package br.com.bb9leko.rest;
 
 import br.com.bb9leko.rest.client.InterfaceTransacao;
+import br.com.bb9leko.service.BuscarPorTicketService;
 import br.com.bb9leko.vo.Transacao;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -18,16 +19,10 @@ import java.util.List;
 public class BuscarPorTicket {
 
     @Inject
-    @RestClient
-    InterfaceTransacao interfaceTransacao;
+    BuscarPorTicketService buscarPorTicketService;
 
     @GET
     public List<Transacao> buscarPorTicket(@QueryParam("q") String ticket) {
-        try {
-            return interfaceTransacao.buscarPorTicket(ticket);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Collections.emptyList();
-        }
+        return buscarPorTicketService.buscarPorTicket(ticket);
     }
 }

@@ -1,4 +1,4 @@
-/*package br.com.bb9leko.service;
+package br.com.bb9leko.service;
 
 import br.com.bb9leko.rest.client.InterfaceTransacao;
 import br.com.bb9leko.vo.Transacao;
@@ -14,7 +14,7 @@ public class InsereTransacaoService{
     @RestClient
     InterfaceTransacao interfaceTransacao;
 
-    public Response enviarTransacao(Transacao dto) {
+    public Response insereTransacaoService(Transacao dto) {
         try {
             Response response = interfaceTransacao.insereTransacao(dto);
             return response;
@@ -24,4 +24,3 @@ public class InsereTransacaoService{
         }
     }
 }
-*/

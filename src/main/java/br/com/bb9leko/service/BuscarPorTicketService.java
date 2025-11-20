@@ -1,4 +1,4 @@
-/*package br.com.bb9leko.service;
+package br.com.bb9leko.service;
 
 import br.com.bb9leko.rest.client.InterfaceTransacao;
 import br.com.bb9leko.vo.Transacao;
@@ -18,16 +18,12 @@ public class BuscarPorTicketService {
     InterfaceTransacao interfaceTransacao;
 
     public List<Transacao> buscarPorTicket(String ticket) {
-        List<Transacao> listaTransacoes = new ArrayList<>();
         try {
-            listaTransacoes = interfaceTransacao.buscarPorTicket(ticket);
-
+            return interfaceTransacao.buscarPorTicket(ticket);
         } catch (Exception e) {
             e.printStackTrace();
             return Collections.emptyList();
         }
-        return listaTransacoes;
     }
 }
 
-*/

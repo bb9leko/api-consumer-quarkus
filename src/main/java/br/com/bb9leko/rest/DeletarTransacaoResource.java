@@ -1,6 +1,7 @@
 package br.com.bb9leko.rest;
 
 import br.com.bb9leko.rest.client.InterfaceTransacao;
+import br.com.bb9leko.service.DeletarTransacaoService;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -17,14 +18,13 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 public class DeletarTransacaoResource {
 
     @Inject
-    @RestClient
-    InterfaceTransacao interfaceTransacao;
+    DeletarTransacaoService deletarTransacaoService;
 
     @DELETE
     @Path("/excluirTransacao/{id}")
     public Response deletarTransacao(@PathParam("id") Long id) {
         try{
-            return interfaceTransacao.deletarTransacao(id);
+            return deletarTransacaoService.deletarTransacao(id);
         } catch (Exception e) {
             e.printStackTrace();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)

@@ -1,6 +1,7 @@
 package br.com.bb9leko.rest;
 
 import br.com.bb9leko.rest.client.InterfaceTransacao;
+import br.com.bb9leko.service.BuscarTransacaoPorIDService;
 import br.com.bb9leko.vo.Transacao;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
@@ -16,18 +17,15 @@ import java.util.List;
 public class BuscarTransacaoPorID {
 
     @Inject
-    @RestClient
-    InterfaceTransacao interfaceTransacao;
+    BuscarTransacaoPorIDService buscarTransacaoPorIDService;
 
     @GET
     @Path("buscarTransacaoPorId/{id}")
     public Transacao buscarTransacaoPorId(@PathParam("id") Long id) {
         try {
-            // Chama a API externa via REST client
-            return interfaceTransacao.buscarTransacaoPorId(id);
+            return buscarTransacaoPorIDService.buscarTransacaoPorId(id);
         } catch (Exception e) {
             e.printStackTrace();
-            // Retorne null ou lance uma exceção conforme sua necessidade
             return null;
         }
     }
