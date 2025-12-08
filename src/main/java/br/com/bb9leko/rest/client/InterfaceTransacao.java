@@ -20,7 +20,7 @@ public interface InterfaceTransacao {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("transacao/listaTransacoes")
-    List<Transacao> getTransacao(
+    List<Transacao> listarTransacoes(
             //@HeaderParam("Authorization") String authorization,
             //@QueryParam("filter") String dataEvento,
     );

@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
-public class TransacaoService {
+public class ListarTransacoesService {
 
-    private static final Logger LOG = LoggerFactory.getLogger(TransacaoService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ListarTransacoesService.class);
 
     @Inject
     @RestClient
@@ -24,7 +24,7 @@ public class TransacaoService {
         LOG.debug("Lista Transações");
         List<Transacao> listaTransacoes = new ArrayList<>();
         try {
-            listaTransacoes = interfaceTransacao.getTransacao();
+            listaTransacoes = interfaceTransacao.listarTransacoes();
         } catch (Exception e) {
             e.printStackTrace();
             // Aqui você pode tratar o erro, logar ou lançar uma exceção personalizada
