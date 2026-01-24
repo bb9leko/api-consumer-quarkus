@@ -47,4 +47,10 @@ public interface InterfaceTransacao {
     @Produces(MediaType.APPLICATION_JSON)
     Transacao buscarTransacaoPorId(@PathParam("id") Long id);
 
+    @PUT
+    @Path("transacao/editarTransacao/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    Response editarTransacao(@PathParam("id") Long id, Transacao dto);
+
 }

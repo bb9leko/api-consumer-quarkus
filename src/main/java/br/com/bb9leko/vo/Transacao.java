@@ -14,7 +14,7 @@ public class Transacao {
 
     public String compraOUVenda;
 
-    public int quantidade;
+    public double quantidade;
 
     public double valorUnitario;
 
@@ -80,11 +80,11 @@ public class Transacao {
         this.compraOUVenda = compraOUVenda;
     }
 
-    public int getQuantidade() {
+    public double getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
     }
 
