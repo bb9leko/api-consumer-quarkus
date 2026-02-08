@@ -6,12 +6,15 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @ApplicationScoped
 public class BuscarPorTicketService {
+
+    private static final Logger LOGGER = Logger.getLogger(BuscarPorTicketService.class.getName());
 
     @Inject
     @RestClient
@@ -21,9 +24,11 @@ public class BuscarPorTicketService {
         try {
             return interfaceTransacao.buscarPorTicket(ticket);
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            LOGGER.log(Level.WARNING, "Erro ao buscar por ticket: " + ticket, e);
             return Collections.emptyList();
         }
     }
+
 }
 
