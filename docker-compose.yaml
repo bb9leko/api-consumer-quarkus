@@ -3,8 +3,8 @@ services:
     image: postgres:15-alpine
     container_name: transacao_consumer_db
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./data_consumer:/var/lib/postgresql/data_consumer
     ports:
