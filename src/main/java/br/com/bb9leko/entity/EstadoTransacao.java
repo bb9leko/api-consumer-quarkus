@@ -15,3 +15,5 @@ public enum EstadoTransacao {
         return descricao;
     }
 }
+
+

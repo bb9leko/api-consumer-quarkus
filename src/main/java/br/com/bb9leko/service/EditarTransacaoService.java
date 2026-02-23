@@ -16,8 +16,7 @@ public class EditarTransacaoService {
 
     public Response editarTransacao(Long id, Transacao dto) {
         try {
-            Response response = interfaceTransacao.editarTransacao(id, dto);
-            return response;
+            return interfaceTransacao.editarTransacao(id, dto);
         } catch (Exception e) {
             e.printStackTrace();
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
@@ -25,4 +24,3 @@ public class EditarTransacaoService {
         }
     }
 }
-

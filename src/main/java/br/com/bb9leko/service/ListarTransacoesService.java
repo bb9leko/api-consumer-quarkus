@@ -14,8 +14,12 @@ import java.util.List;
 @ApplicationScoped
 public class ListarTransacoesService {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ListarTransacoesService.class);
-
+    /**
+     * Cliente REST para operações de transações.
+     */
+    private static final Logger LOG = LoggerFactory.getLogger(
+            ListarTransacoesService.class);
+    /**      * Cliente REST para operações de transações.      */
     @Inject
     @RestClient
     InterfaceTransacao interfaceTransacao;
@@ -27,8 +31,12 @@ public class ListarTransacoesService {
             listaTransacoes = interfaceTransacao.listarTransacoes();
         } catch (Exception e) {
             e.printStackTrace();
-            // Aqui você pode tratar o erro, logar ou lançar uma exceção personalizada
+            // Aqui você pode tratar o erro, logar ou lançar uma exceção
+            // personalizada
         }
         return listaTransacoes;
     }
 }
+
+
+

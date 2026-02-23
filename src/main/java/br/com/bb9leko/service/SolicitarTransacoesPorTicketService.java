@@ -35,3 +35,5 @@ public class SolicitarTransacoesPorTicketService {
         return controle.getId();
     }
 }
+
+

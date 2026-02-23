@@ -62,3 +62,5 @@ public class PersistirTransacoesServiceAsyncPooling {
         Log.info("Novo estado inserido: " + ticket + " -> " + estado.getDescricao());
     }
 }
+
+
